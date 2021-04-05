@@ -12,13 +12,13 @@ import json
 import pickle
 import pandas as pd
 import nltk
-nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
 from keras.models import Sequential, load_model
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
 
+nltk.download('punkt')
+stemmer = LancasterStemmer()
 with open("data.pickle", "rb") as f:
         words, classes, train_x, train_y = pickle.load(f)
 with open("intents.json") as file:
